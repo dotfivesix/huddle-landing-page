@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root
+{
+    --violet: hsl(257, 40%, 49%);
+    --soft-magenta: hsl(300, 69%, 71%);
+    --heading-font: "Poppins", Arial;
+    --para-font: "Open Sans", sans-serif;
+}
+body
+{
+    width: 100%;
+    background-color: var(--violet);
+}
+body::before
+{
+    content: '';
+    position: absolute;
+    background-image: url("./images/bg-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.logo-container
+{
+    padding: 1.5rem;
+}
+.logo-container > img
+{
+    width: 10rem;
+}
+.hero
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.image-container
+{
+    margin-bottom: 2rem;
+}
+.image-container > img
+{
+    width: 100%;
+}
+.hero-context
+{
+    text-align: center;
+    padding: 0 1em;
+}
+.hero-context > h1
+{
+    color: white;
+    font-size: 1.8em;
+    font-family: var(--heading-font);
+    font-weight: 600;
+}
+.hero-context > h1::selection, .hero-context > p::selection
+{
+    background-color: var(--soft-magenta);
+}
+.hero-context > p
+{
+    color: white;
+    font-family: var(--para-font);
+    margin: 1em 0;
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+.hero-context > button
+{
+    width: 12.5em;
+    background-color: white;
+    color: var(--violet);
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 3em;
+    border-radius: 1.25em;
+    font-size: 1em;
+    font-family: var(--heading-font);
+    cursor: pointer;
+}
+.hero-context > button:hover
+{
+    background-color: var(--soft-magenta);
+    color: white;
+}
+footer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    color: white;
+}
+.social-icons
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    margin: 0 .5rem;
+    font-size: 2rem;
+    border: 1px solid white;
+    width: 3rem;
+    border-radius: 50%;
+}
+.social-icons:hover
+{
+    color: var(--soft-magenta);
+    cursor: pointer;
+}
+
+@media screen and (min-width: 520px)
+{
+    :root {font-size: 18px;}
+}
+
+@media screen and (min-width: 920px) and (min-height: 640px)
+{
+    body::before
+    {
+        background-image: url("./images/bg-desktop.svg");
+    }
+    .hero
+    {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .hero-context
+    {
+        text-align: start;
+    }
+    footer
+    {
+        justify-content: flex-end;
+    }
+    .image-container
+    {
+        margin-bottom: 0;
+        width: 50%;
+        max-width: 37.5rem;
+    }
+    .hero-context
+    {
+        margin-left: 1.5rem;
+        width: 50%;
+        max-width: 30rem;
+        font-size: 18px;
+    }
+    .hero-context > button
+    {
+        margin: 0;
+    }
+}
+@media screen and (min-width: 1440px) and (min-height: 640px) {
+    .hero
+    {
+        justify-content: center;
+    }
+}
